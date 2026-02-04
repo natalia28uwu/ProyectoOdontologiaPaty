@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solicitar cita</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3e6e1, #e8f0f4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(180, 200, 215, 0.45);
+  box-shadow:
+    0 20px 45px rgba(150, 170, 185, 0.35),
+    inset 0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 28px;
+  color: #2f3e46;
+  font-weight: 600;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin: 10px auto 0;
+  background: #8fb7c9;
+}
+
+form div {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #4f646f;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(160, 185, 200, 0.6);
+  border-radius: 12px;
+  font-size: 14px;
+  color: #2f3e46;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #8fb7c9, #6fa3bd);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 10px 25px rgba(111, 163, 189, 0.5);
+}
+</style>
+</head>
+
+<body>
+  <main>
+    <h1>Solicitar cita odontológica</h1>
+
+    <form action="../php/form_citas.php" method="post">
+
+      <div>
+        <label for="nombre">Nombre del paciente</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Ej. María"
+          required>
+      </div>
+
+      <div>
+        <label for="apellido">Apellido del paciente</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          placeholder="Ej. Pérez"
+          required>
+      </div>
+
+      <div>
+        <label for="cedula">Cédula del paciente</label>
+        <input
+          type="text"
+          id="cedula"
+          name="cedula"
+          placeholder="001-0000001-1"
+          required>
+      </div>
+
+      <div>
+        <label for="fecha">Fecha deseada</label>
+        <input
+          type="date"
+          id="fecha"
+          name="fecha"
+          required>
+      </div>
+
+      <div>
+        <label for="motivo">Motivo de la cita</label>
+        <textarea
+          id="motivo"
+          name="motivo"
+          placeholder="Ej. limpieza, dolor dental, revisión..."></textarea>
+      </div>
+
+      <div>
+        <button type="submit">Solicitar cita</button>
+      </div>
+
+    </form>
+  </main>
+</body>
+</html>
