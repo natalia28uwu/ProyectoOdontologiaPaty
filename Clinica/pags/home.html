@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema Clínica</title>
+    <link rel="stylesheet" href="../css/dashboard.css?v=6.0">
+</head>
+<body>
+    <div class="dashboard-container">
+        <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>CLÍNICA</h2>
+                <p>Panel Administrativo</p>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../pags/home.html" class="nav-link active">HOME</a></li>
+                    <li class="nav-item"><a href="../pags/mantenimiento.html" class="nav-link">MANTENIMIENTO</a></li>
+                    <li class="nav-item"><a href="../pags/consulta.html" class="nav-link">CONSULTA</a></li>
+                    <li class="nav-item"><a href="../pags/procesos.html" class="nav-link">PROCESOS</a></li>
+                    <li class="nav-item"><a href="../pags/reportes.html" class="nav-link">REPORTES</a></li>
+                </ul>
+                <!-- Footer Sidebar Permanente -->
+                <ul class="nav-menu" style="position: absolute; bottom: 30px; width: calc(100% - 40px);">
+                    <li class="nav-item"><a href="../Index.html" class="nav-link" style="color: #4ade80 !important; font-weight: 700;">VER PÁGINA WEB</a></li>
+                    <li class="nav-item"><a href="../php/logout.php" class="nav-link" style="color: #ff4d4d !important; font-weight: 700;">CERRAR SESIÓN</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Inicio - Resumen Administrativo</h1>
+            </header>
+
+            <div class="glass-card">
+                <div class="glass-card-header">
+                    <h2 style="color: var(--accent-cyan);">Actividades Recientes</h2>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Actividad</th>
+                            <th>Usuario</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="actividades-body">
+                        <!-- Dinámico -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../php/api/get_dashboard_stats.php')
+                .then(res => res.json()).then(res => {
+                    if(res.success) {
+                        const tableBody = document.getElementById('actividades-body');
+                        tableBody.innerHTML = '';
+                        if(res.data.actividades && res.data.actividades.length > 0) {
+                            res.data.actividades.forEach(act => {
+                                tableBody.innerHTML += `<tr><td>${act.Actividad}</td><td>${act.Usuario}</td><td>${act.Fecha}</td><td><span class="badge-success">${act.Estado}</span></td></tr>`;
+                            });
+                        } else {
+                            tableBody.innerHTML = '<tr><td colspan="4" style="text-align:center;">No hay actividades recientes</td></tr>';
+                        }
+                    }
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Odontológico Los Prados</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/Style.css">
+</head>
+
+<body>
+
+    <!-- ========== MAIN HEADER ========== -->
+    <header class="header" id="mainHeader">
+        <nav class="navbar">
+            <a href="#" class="logo-link">
+                <div class="logo-icon-wrapper">
+                    <svg class="logo-tooth" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="toothGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#37657a"/>
+                                <stop offset="100%" stop-color="#5a9cb8"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="25" cy="25" r="24" fill="url(#toothGrad)" opacity="0.1"/>
+                        <path d="M25 10C21.2 10 18 12 18 15.2C18 18.3 19.8 19.8 19.8 23C19.8 26.5 18 30.5 18.8 34C19.6 37.5 21.2 37.5 22.4 37.5C23.6 37.5 24 36 25 32.5C26 36 26.4 37.5 27.6 37.5C28.8 37.5 30.4 37.5 31.2 34C32 30.5 30.2 26.5 30.2 23C30.2 19.8 32 18.3 32 15.2C32 12 28.8 10 25 10Z" fill="url(#toothGrad)"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">CENTRO ODONTOLÓGICO</span>
+                    <span class="logo-accent">LOS PRADOS</span>
+                </div>
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#galeria" class="nav-link">Galería</a>
+                <a href="#proceso" class="nav-link">Proceso</a>
+                <a href="#faq" class="nav-link">Dudas</a>
+                <a href="./pags/registro_paciente.html" class="nav-login">Registrar Paciente</a>
+                <a href="./pags/login.html" class="nav-login">Iniciar sesión</a>
+                <a href="./pags/form_citas.html" class="nav-cta">
+                    <span>Solicitar Cita</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
+            <div class="wrapper">
+                <div class="hero-txt">
+                    <span class="hero-badge">Centro Odontológico Los Prados</span>
+                    <h1>Sonrisas que <br><em>definen</em> el éxito.</h1>
+                    <p>Odontología especializada con los estándares más altos de Santiago de los Caballeros.</p>
+                    <div class="hero-actions">
+                        <a href="./pags/tratamiento.html" class="btn btn-hero">Más de nosotros</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="serv">
+            <div class="wrapper">
+                <div class="intro">
+                    <span>Especialidades</span>
+                    <h2>Excelencia Clínica</h2>
+                </div>
+                <div class="grid">
+                    <article class="item">
+                        <div class="icon">01</div>
+                        <h3>Diseño Digital</h3>
+                        <p>Simulación 3D de su sonrisa antes de comenzar el tratamiento.</p>
+                    </article>
+                    <article class="item">
+                        <div class="icon">02</div>
+                        <h3>Carillas Premium</h3>
+                        <p>Porcelana artesanal de alta resistencia y acabado natural.</p>
+                    </article>
+                    <article class="item">
+                        <div class="icon">03</div>
+                        <h3>Implantes</h3>
+                        <p>Cirugía mínimamente invasiva con carga inmediata.</p>
+                    </article>
+                    <article class="item">
+                        <div class="icon">04</div>
+                        <h3>Ortodoncia</h3>
+                        <p>Alineadores invisibles de última generación (Clear Aligner).</p>
+                    </article>
+                    <article class="item">
+                        <div class="icon">05</div>
+                        <h3>Blanqueamiento</h3>
+                        <p>Tecnología láser fría para resultados sin sensibilidad.</p>
+                    </article>
+                    <article class="item">
+                        <div class="icon">06</div>
+                        <h3>Estética Facial</h3>
+                        <p>Tratamientos complementarios para un rostro armonioso.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section" id="estadisticas">
+            <div class="wrapper">
+                <div class="intro">
+                    <span>Nuestra Trayectoria</span>
+                    <h2>Números que Hablan</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card" data-target="1500">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Pacientes Satisfechos</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card" data-target="12">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card" data-target="98">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">% Satisfacción</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card" data-target="6">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Especialidades</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="about">
+            <div class="wrapper">
+                <div class="split">
+                    <div class="col-txt">
+                        <h2>Un espacio de <br>tranquilidad absoluta</h2>
+                        <p>Ubicada en Santiago de los Caballeros, nuestra clínica redefine el concepto de visita al
+                            dentista. Ofrecemos un entorno privado y relajante diseñado para pacientes exigentes.</p>
+                        <p>Utilizamos materiales biocompatibles y la tecnología más avanzada de diagnóstico por imagen.</p>
+                    </div>
+                    <div class="col-img">
+                        <img src="./img/doct.jpeg" alt="Clinica">
+                    </div>
+                </div>
+
+                <!-- Nueva sección de Misión, Visión y Valores -->
+                <div class="mission-vision-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px;">
+                    <div class="mvv-card" style="background: rgba(55, 101, 122, 0.05); padding: 30px; border-radius: 20px; border-left: 5px solid #37657a;">
+                        <h3 style="color: #37657a; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            Misión
+                        </h3>
+                        <p style="font-size: 0.95em; line-height: 1.6; color: #4a5568;">
+                            Brindar salud bucal integral con los más altos estándares de calidad, utilizando tecnología de vanguardia y un trato humano excepcional para transformar sonrisas y mejorar la calidad de vida de nuestros pacientes.
+                        </p>
+                    </div>
+                    <div class="mvv-card" style="background: rgba(55, 101, 122, 0.05); padding: 30px; border-radius: 20px; border-left: 5px solid #37657a;">
+                        <h3 style="color: #37657a; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            Visión
+                        </h3>
+                        <p style="font-size: 0.95em; line-height: 1.6; color: #4a5568;">
+                            Ser el referente líder en odontología estética e innovadora en la región, reconocidos por nuestra excelencia clínica, la calidez de nuestro equipo y el impacto positivo en la comunidad.
+                        </p>
+                    </div>
+                    <div class="mvv-card" style="background: rgba(55, 101, 122, 0.05); padding: 30px; border-radius: 20px; border-left: 5px solid #37657a;">
+                        <h3 style="color: #37657a; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            Valores
+                        </h3>
+                        <ul style="list-style: none; padding: 0; font-size: 0.95em; line-height: 1.8; color: #4a5568;">
+                            <li><strong>Ética:</strong> Integridad en cada diagnóstico.</li>
+                            <li><strong>Pasión:</strong> Amor por lo que hacemos.</li>
+                            <li><strong>Innovación:</strong> Mejora continua y tecnología.</li>
+                            <li><strong>Compromiso:</strong> Tu bienestar es nuestra prioridad.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="galeria" class="gallery-section">
+            <div class="wrapper">
+                <div class="intro">
+                    <span>Nuestra Clínica</span>
+                    <h2>Galería de Imágenes</h2>
+                </div>
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="clinica">Clínica</button>
+                    <button class="filter-btn" data-filter="equipo">Equipo</button>
+                    <button class="filter-btn" data-filter="espacio">Espacios</button>
+                </div>
+                <div class="gallery-grid" id="galleryGrid">
+                    <div class="gallery-item show" data-category="clinica"
+                        data-caption="Equipos de última tecnología">
+                        <img src="./img/fisico.png" alt="Tecnología Avanzada">
+                        <div class="gallery-overlay">
+
+                            <span class="gallery-zoom">&#x2922;</span>
+                            <p>Establecimiento</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item show" data-category="equipo"
+                        data-caption="Especialista dedicada a tu cuidado">
+                        <img src="./img/doct.jpeg" alt="Especialista">
+                        <div class="gallery-overlay">
+                            <span class="gallery-zoom">&#x2922;</span>
+                            <p>Nuestra Especialista</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item show" data-category="equipo"
+                        data-caption="Profesionales comprometidos contigo">
+                        <img src="./img/equipo1.png" alt="Equipo Profesional">
+                        <div class="gallery-overlay">
+                            <span class="gallery-zoom">&#x2922;</span>
+                            <p>Equipo Profesional</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item show" data-category="espacio"
+                        data-caption="Espacios diseñados para tu bienestar">
+                        <img src="./img/Junt.png" alt="Espacios">
+                        <div class="gallery-overlay">
+                            <span class="gallery-zoom">&#x2922;</span>
+                            <p>Nuestros Espacios</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item show" data-category="espacio"
+                        data-caption="Ambiente cálido y acogedor">
+                        <img src="./img/espacio.png" alt="Ambiente">
+                        <div class="gallery-overlay">
+                            <span class="gallery-zoom">&#x2922;</span>
+                            <p>Ambiente</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item show" data-category="espacio"
+                        data-caption="Sala de espera con diseño exclusivo">
+                        <img src="./img/espacio2.png" alt="Sala de Espera">
+                        <div class="gallery-overlay">
+                            <span class="gallery-zoom">&#x2922;</span>
+                            <p>Trabajando</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-overlay"></div>
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightboxClose">&times;</button>
+                <button class="lightbox-prev" id="lightboxPrev">&#8592;</button>
+                <img src="" alt="" id="lightboxImg">
+                <p id="lightboxCaption"></p>
+                <button class="lightbox-next" id="lightboxNext">&#8594;</button>
+            </div>
+        </div>
+
+        <!-- QUOTE -->
+        <section class="quote">
+            <div class="wrapper">
+                <div class="quote-decoration">“</div>
+                <blockquote>La mejor inversión que he hecho en mi imagen y salud.</blockquote>
+                <p class="quote-author">— Natalia Frias, Paciente Regular</p>
+                <div class="quote-line"></div>
+            </div>
+        </section>
+
+
+        <!-- ========================================
+             SECCIÓN INTERACTIVA 3: CARRUSEL TESTIMONIOS
+        ======================================== -->
+        <section class="testimonials-section" id="testimonios">
+            <div class="wrapper">
+                <div class="intro">
+                    <span>Lo que dicen de nosotros</span>
+                    <h2>Testimonios</h2>
+                </div>
+                <div class="testimonials-carousel">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <blockquote>"Nunca pensé que ir al dentista pudiera ser tan placentero. El equipo de
+                                Centro Odontológico Los Prados me hizo sentir completamente relajada desde el primer momento."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">NF</div>
+                                <div>
+                                    <strong>Natalia Frias</strong>
+                                    <span>Diseño de Sonrisa</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <blockquote>"Mis carillas de porcelana quedaron perfectas. La doctora tiene un ojo artístico
+                                increíble. Ahora puedo sonreír con total confianza en cualquier situación."</blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">CM</div>
+                                <div>
+                                    <strong>Carlos Medina</strong>
+                                    <span>Carillas Premium</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <blockquote>"El proceso de mi implante fue sorprendentemente cómodo. En una sola visita ya
+                                tenía mi nuevo diente funcional. Super recomendada esta clínica."</blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">LR</div>
+                                <div>
+                                    <strong>Laura Rodríguez</strong>
+                                    <span>Implante Dental</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <blockquote>"El blanqueamiento laser fue rápido e indoloro. Mi sonrisa es varios tonos más
+                                brillante y todo el mundo me pregunta qué hice. Un resultado increíble."</blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">MP</div>
+                                <div>
+                                    <strong>María Pérez</strong>
+                                    <span>Blanqueamiento Láser</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials-controls">
+                        <button class="testimonial-btn" id="testimonialPrev" aria-label="Anterior">&#8592;</button>
+                        <div class="testimonials-dots" id="testimonialsDots"></div>
+                        <button class="testimonial-btn" id="testimonialNext" aria-label="Siguiente">&#8594;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECCIÓN: PROCESO DE TRATAMIENTO
+        ======================================== -->
+        <section class="process-section" id="proceso">
+            <div class="wrapper">
+                <div class="intro">
+                    <span>Cómo Trabajamos</span>
+                    <h2>Tu Camino a la Sonrisa Perfecta</h2>
+                </div>
+                <div class="process-timeline">
+                    <div class="process-step" data-step="1">
+                        <div class="step-connector"></div>
+                        <div class="step-circle">
+                            <span>01</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>Consulta Inicial</h3>
+                            <p>Evaluación completa de tu salud oral y diseño digital de tu sonrisa ideal.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-step="2">
+                        <div class="step-connector"></div>
+                        <div class="step-circle">
+                            <span>02</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>Plan Personalizado</h3>
+                            <p>Creamos un plan de tratamiento único a medida de tus necesidades y metas estéticas.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-step="3">
+                        <div class="step-connector"></div>
+                        <div class="step-circle">
+                            <span>03</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>Tratamiento Experto</h3>
+                            <p>Procedimientos realizados con la última tecnología y los más altos estándares clínicos.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-step="4">
+                        <div class="step-connector"></div>
+                        <div class="step-circle">
+                            <span>04</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>Seguimiento Premium</h3>
+                            <p>Acompañamiento continuo y revisiones programadas para mantener tu sonrisa perfecta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECCIÓN: PREGUNTAS FRECUENTES (FAQ)
+        ======================================== -->
+        <section class="faq-section" id="faq">
+            <div class="wrapper">
+                <div class="intro">
+                    <span>Resolvemos tus Dudas</span>
+                    <h2>Preguntas Frecuentes</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Cuánto tiempo dura un diseño de sonrisa?</span>
+                            <div class="faq-icon"></div>
+                        </button>
+                        <div class="faq-answer">
+                            <p>El proceso completo varía entre 2 y 6 semanas dependiendo del tratamiento. Las carillas
+                                de porcelana requieren entre 2–3 visitas, mientras que los alineadores invisibles pueden
+                                tomar varios meses según el nivel de corrección.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿El blanqueamiento láser es doloroso?</span>
+                            <div class="faq-icon"></div>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. Utilizamos tecnología de láser frío que minimiza la sensibilidad. La mayoría de
+                                nuestros pacientes describen el procedimiento como completamente cómodo, con resultados
+                                visibles desde la primera sesión.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Cuánto duran los implantes dentales?</span>
+                            <div class="faq-icon"></div>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Los implantes de titanio tienen una durabilidad de décadas — prácticamente son para toda
+                                la vida con el cuidado adecuado. Utilizamos implantes de alta gama con garantía de
+                                osseointegración y ofrecemos carga inmediata en la mayoría de los casos.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Ofrecen planes de financiamiento?</span>
+                            <div class="faq-icon"></div>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, contamos con opciones de pago flexibles adaptadas a tu presupuesto. Aceptamos
+                                múltiples formas de pago y podemos diseñar un plan de cuotas que se ajuste a tus
+                                posibilidades sin comprometer la calidad del tratamiento.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>¿Atienden pacientes con ansiedad dental?</span>
+                            <div class="faq-icon"></div>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutamente. Nuestra clínica está diseñada para pacientes con sensibilidad especial.
+                                Contamos con protocolos de sedación consciente y un entorno calmado, privado y elegante
+                                que transforma la experiencia dental desde el primer momento.</p>
+                        </div>
+                    </div>
+        <!-- ========================================
+             SECCIÓN: ASISTENTE INTELIGENTE (NUEVO)
+        ======================================== -->
+        <section class="crm-teaser" style="background: linear-gradient(135deg, #37657a, #5a9cb8); color: white; padding: 100px 0; text-align: center;">
+            <div class="wrapper">
+                <div class="intro">
+                    <span style="color: #4ade80;">Innovación para ti</span>
+                    <h2 style="color: white; margin-bottom: 20px;">¿Necesitas ayuda con tu registro o citas?</h2>
+                    <p style="max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem; opacity: 0.9;">
+                        Hemos creado un <strong>Asistente Inteligente (CRM)</strong> que te acompaña antes, durante y después de tu tratamiento. 
+                        Obtén recomendaciones personalizadas y recordatorios automáticos.
+                    </p>
+                    <a href="./pags/crm_asistente.html" class="btn" style="background: white; color: #37657a; font-weight: 700; padding: 15px 40px; border-radius: 50px; text-decoration: none; transition: 0.3s;">
+                        Hablar con el Asistente
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floating Chat Button -->
+        <a href="./pags/crm_asistente.html" class="floating-chat" style="position: fixed; bottom: 30px; right: 30px; background: #37657a; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; font-size: 24px;">
+            💬
+        </a>
+    </main>
+
+    <footer class="footer-premium">
+        <div class="footer-container">
+            <div class="footer-section brand-info">
+                <h2 class="footer-title-main">Centro Odontológico Los Prados</h2>
+                <p class="footer-text">
+                    Elevamos los estándares de cuidado dental con innovación y un enfoque personalizado para tu
+                    bienestar integral.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Contacto</h4>
+                <div class="contact-item">
+                    <span class="label">T.</span>
+                    <a href="tel:8094890499" class="footer-link">809-489-0499</a>
+                </div>
+                <div class="contact-item">
+                    <span class="label">E.</span>
+                    <a href="mailto:contacto@centrolosprados.com" class="footer-link">contacto@centrolosprados.com</a>
+                </div>
+                <div class="schedule-box">
+                    <p>Lun - Vie: 9:00 AM - 6:00 PM</p>
+                    <p>Sáb: 9:00 AM - 1:00 PM</p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Explora</h4>
+                <nav class="footer-nav">
+                    <a href="#" class="footer-link">Inicio</a>
+                    <a href="#servicios" class="footer-link">Servicios</a>
+                    <a href="#galeria" class="footer-link">Galería</a>
+                    <a href="#" class="footer-link">Privacidad</a>
+                </nav>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Síguenos</h4>
+                <a href="https://www.instagram.com/c.odontologico_losprados/" target="_blank" class="instagram-link">
+                    Instagram
+                </a>
+                <div class="map-container">
+                    <a href="https://maps.app.goo.gl/Rfdega7VEB535Qpf8" target="_blank" class="map-button">
+                        Ubícanos en Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2026 Centro Odontológico Los Prados. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // =============================================
+        // 0. HEADER SCROLL & HAMBURGER MENU
+        // =============================================
+        var header = document.getElementById('mainHeader');
+        var hamburger = document.getElementById('hamburger');
+        var navMenu = document.getElementById('navMenu');
+        // Scroll-based glassmorphism header
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 60) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Hamburger toggle
+        hamburger.addEventListener('click', function () {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('open');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('open');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
+        // =============================================
+        // 1. ANIMATED STATS COUNTER (Scroll-triggered)
+        // =============================================
+        function animateCounter(el, target, duration) {
+            let start = 0;
+            const increment = Math.ceil(target / (duration / 16));
+            const timer = setInterval(function () {
+                start += increment;
+                if (start >= target) {
+                    start = target;
+                    clearInterval(timer);
+                }
+                el.textContent = start.toLocaleString('es-DO');
+            }, 16);
+        }
+
+        var statsSection = document.querySelector('.stats-section');
+        var statsAnimated = false;
+
+        if (statsSection && 'IntersectionObserver' in window) {
+            var statsObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting && !statsAnimated) {
+                        statsAnimated = true;
+                        document.querySelectorAll('.stat-card').forEach(function (card, i) {
+                            var target = parseInt(card.dataset.target, 10);
+                            var numEl = card.querySelector('.stat-number');
+                            var barFill = card.querySelector('.stat-bar-fill');
+                            setTimeout(function () {
+                                animateCounter(numEl, target, 1800);
+                                barFill.style.width = '100%';
+                            }, i * 200);
+                        });
+                    }
+                });
+            }, { threshold: 0.3 });
+            statsObserver.observe(statsSection);
+        }
+
+
+        // =============================================
+        // 3. TESTIMONIALS CAROUSEL (Auto-play)
+        // =============================================
+        var track = document.getElementById('testimonialsTrack');
+        var slides = document.querySelectorAll('.testimonial-slide');
+        var dotsContainer = document.getElementById('testimonialsDots');
+        var currentSlide = 0;
+        var autoPlayTimer;
+
+        slides.forEach(function (_, i) {
+            var dot = document.createElement('button');
+            dot.classList.add('testimonial-dot');
+            dot.setAttribute('aria-label', 'Testimonio ' + (i + 1));
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', function () { goToSlide(i); resetAutoPlay(); });
+            dotsContainer.appendChild(dot);
+        });
+
+        function goToSlide(index) {
+            currentSlide = index;
+            track.style.transform = 'translateX(-' + (index * 100) + '%)';
+            document.querySelectorAll('.testimonial-dot').forEach(function (d, i) {
+                d.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
+        function prevSlide() { goToSlide((currentSlide - 1 + slides.length) % slides.length); }
+
+        function startAutoPlay() { autoPlayTimer = setInterval(nextSlide, 5000); }
+        function resetAutoPlay() { clearInterval(autoPlayTimer); startAutoPlay(); }
+
+        document.getElementById('testimonialNext').addEventListener('click', function () { nextSlide(); resetAutoPlay(); });
+        document.getElementById('testimonialPrev').addEventListener('click', function () { prevSlide(); resetAutoPlay(); });
+        startAutoPlay();
+
+        // =============================================
+        // 4. PHOTO GALLERY + LIGHTBOX
+        // =============================================
+        var allGalleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightboxImg');
+        var lightboxCaption = document.getElementById('lightboxCaption');
+        var currentLightboxIndex = 0;
+        var visibleItems = allGalleryItems.slice();
+
+        document.querySelectorAll('.filter-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                var filter = btn.dataset.filter;
+                visibleItems = [];
+                allGalleryItems.forEach(function (item) {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.classList.remove('hide');
+                        item.classList.add('show');
+                        visibleItems.push(item);
+                    } else {
+                        item.classList.remove('show');
+                        item.classList.add('hide');
+                    }
+                });
+            });
+        });
+
+        allGalleryItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+                var idx = visibleItems.indexOf(item);
+                if (idx === -1) return;
+                currentLightboxIndex = idx;
+                openLightbox(visibleItems[currentLightboxIndex]);
+            });
+        });
+
+        function openLightbox(item) {
+            var img = item.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.textContent = item.dataset.caption || '';
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        document.querySelector('.lightbox-overlay').addEventListener('click', closeLightbox);
+
+        document.getElementById('lightboxNext').addEventListener('click', function () {
+            currentLightboxIndex = (currentLightboxIndex + 1) % visibleItems.length;
+            openLightbox(visibleItems[currentLightboxIndex]);
+        });
+
+        document.getElementById('lightboxPrev').addEventListener('click', function () {
+            currentLightboxIndex = (currentLightboxIndex - 1 + visibleItems.length) % visibleItems.length;
+            openLightbox(visibleItems[currentLightboxIndex]);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+            if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
+        });
+
+        // =============================================
+        // 5. PROCESS TIMELINE - Scroll Reveal
+        // =============================================
+        var processSteps = document.querySelectorAll('.process-step');
+        if (processSteps.length && 'IntersectionObserver' in window) {
+            var processObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        var step = entry.target;
+                        var delay = parseInt(step.dataset.step || 0, 10) * 150;
+                        setTimeout(function () {
+                            step.classList.add('visible');
+                        }, delay);
+                        processObserver.unobserve(step);
+                    }
+                });
+            }, { threshold: 0.3 });
+            processSteps.forEach(function (step) { processObserver.observe(step); });
+        }
+
+        // =============================================
+        // 6. FAQ ACCORDION
+        // =============================================
+        document.querySelectorAll('.faq-question').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var isOpen = btn.getAttribute('aria-expanded') === 'true';
+                // Close all
+                document.querySelectorAll('.faq-question').forEach(function (b) {
+                    b.setAttribute('aria-expanded', 'false');
+                    b.nextElementSibling.classList.remove('open');
+                });
+                // Toggle clicked
+                if (!isOpen) {
+                    btn.setAttribute('aria-expanded', 'true');
+                    btn.nextElementSibling.classList.add('open');
+                }
+            });
+        });
+
+        // =============================================
+        // 7. SCROLL REVEAL for all sections
+        // =============================================
+        var revealSections = document.querySelectorAll('.serv, .about, .gallery-section, .testimonials-section, .quote, .stats-section, .faq-section, .process-section');
+        revealSections.forEach(function(sec) { sec.classList.add('reveal-section'); });
+
+        if ('IntersectionObserver' in window) {
+            var revealObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealSections.forEach(function (sec) { revealObserver.observe(sec); });
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta - Sistema Clínica</title>
+    <link rel="stylesheet" href="../css/dashboard.css?v=6.0">
+</head>
+<body>
+    <div class="dashboard-container">
+        <button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>CLÍNICA</h2>
+                <p>Panel Administrativo</p>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../pags/home.html" class="nav-link">HOME</a></li>
+                    <li class="nav-item"><a href="../pags/mantenimiento.html" class="nav-link">MANTENIMIENTO</a></li>
+                    <li class="nav-item"><a href="../pags/consulta.html" class="nav-link active">CONSULTA</a></li>
+                    <li class="nav-item"><a href="../pags/procesos.html" class="nav-link">PROCESOS</a></li>
+                    <li class="nav-item"><a href="../pags/reportes.html" class="nav-link">REPORTES</a></li>
+                </ul>
+                <ul class="nav-menu" style="position: absolute; bottom: 30px; width: calc(100% - 40px);">
+                    <li class="nav-item"><a href="../Index.html" class="nav-link" style="color: #4ade80 !important; font-weight: 700;">VER PÁGINA WEB</a></li>
+                    <li class="nav-item"><a href="../php/logout.php" class="nav-link" style="color: #ff4d4d !important; font-weight: 700;">CERRAR SESIÓN</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Consulta de Registros</h1>
+            </header>
+
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="showTab('pacientes')">Pacientes</button>
+                <button class="tab-btn" onclick="showTab('diagnosticos')">Diagnósticos</button>
+                <button class="tab-btn" onclick="showTab('citas')">Citas</button>
+                <button class="tab-btn" onclick="showTab('doctores')">Doctores</button>
+            </div>
+
+            <div class="glass-card">
+                <div class="form-group" style="max-width: 400px; margin-bottom: 25px;">
+                    <label id="labelSearch">Buscar Paciente o DNI</label>
+                    <input type="text" class="form-control" id="searchInput" placeholder="Ingrese búsqueda..." onkeyup="buscar()">
+                </div>
+                
+                <table class="data-table">
+                    <thead id="tableHeader"></thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="modalDetalle">
+        <div class="modal">
+            <h2 style="color: var(--accent-cyan); margin-bottom: 20px;">Detalle del Registro</h2>
+            <div id="detalleContent" style="max-height: 400px; overflow-y: auto; color: #444;"></div>
+            <div style="margin-top: 20px; text-align: right;">
+                <button class="btn-primary" onclick="cerrarModal()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentType = 'pacientes';
+        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('active'); }
+        function showTab(type) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            currentType = type;
+            updateHeaders(); fetchData();
+        }
+        function updateHeaders() {
+            const h = document.getElementById('tableHeader');
+            if(currentType === 'pacientes') h.innerHTML = '<tr><th>ID</th><th>Nombre</th><th>DNI</th><th>Seguro</th><th>Acciones</th></tr>';
+            else if(currentType === 'diagnosticos') h.innerHTML = '<tr><th>ID</th><th>Fecha</th><th>Paciente</th><th>Diagnóstico</th><th>Acciones</th></tr>';
+            else if(currentType === 'citas') h.innerHTML = '<tr><th>ID</th><th>Fecha</th><th>Paciente</th><th>Doctor</th><th>Estado</th><th>Acciones</th></tr>';
+            else h.innerHTML = '<tr><th>ID</th><th>Nombre</th><th>Especialidad</th><th>Estado</th><th>Acciones</th></tr>';
+        }
+        function fetchData() {
+            const b = document.getElementById('tableBody');
+            b.innerHTML = '<tr><td colspan="10" style="text-align:center;">Cargando...</td></tr>';
+            fetch(`../php/api/get_consulta.php?type=${currentType}`)
+                .then(r => r.json()).then(r => {
+                    if(r.success) {
+                        b.innerHTML = '';
+                        r.data.forEach(item => {
+                            const tr = document.createElement('tr');
+                            let html = '';
+                            if(currentType === 'pacientes') html = `<td>${item.ID}</td><td>${item.Nombre}</td><td>${item.DNI}</td><td>${item.Seguro}</td>`;
+                            else if(currentType === 'diagnosticos') html = `<td>${item.ID}</td><td>${item.Fecha}</td><td>${item.Paciente}</td><td>${item.Diagnostico}</td>`;
+                            else if(currentType === 'citas') html = `<td>${item.ID}</td><td>${item.Fecha}</td><td>${item.Paciente}</td><td>${item.Doctor}</td><td>${item.Estado}</td>`;
+                            else html = `<td>${item.ID}</td><td>${item.Nombre}</td><td>${item.Especialidad}</td><td>${item.Estado}</td>`;
+                            html += `<td><button class="btn-secondary" onclick='verDetalle(${JSON.stringify(item)})'>Detalle</button></td>`;
+                            tr.innerHTML = html; b.appendChild(tr);
+                        });
+                    }
+                });
+        }
+        function verDetalle(obj) {
+            const cont = document.getElementById('detalleContent'); cont.innerHTML = '';
+            for(let key in obj) { cont.innerHTML += `<p><strong>${key}:</strong> ${obj[key]}</p>`; }
+            document.getElementById('modalDetalle').classList.add('active');
+        }
+        function cerrarModal() { document.getElementById('modalDetalle').classList.remove('active'); }
+        document.addEventListener('DOMContentLoaded', () => { updateHeaders(); fetchData(); });
+    </script>
+</body>
+</html>
